@@ -1,0 +1,280 @@
+/* MEMBER 2: global styles, layout, colours, dark mode */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #292b3d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #f3effc,
+        #ffffff
+    );
+
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.hero h1 {
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #777;
+    font-size: 9px;
+    margin-bottom: 16px;
+}
+
+.hero button {
+    background-color: #4b258c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #35176d;
+}
+
+section {
+    padding: 35px 20px;
+}
+
+section h2 {
+    text-align: center;
+    color: #4b258c;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+.about {
+    background-color: white;
+}
+
+.about-container {
+    width: 75%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.about-card {
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    padding: 17px 10px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.about-card h3 {
+    color: #4b258c;
+    font-size: 9px;
+    margin-bottom: 8px;
+}
+
+.about-card p {
+    color: #777;
+    font-size: 7px;
+    line-height: 1.5;
+}
+
+.team {
+    background-color: #f3f0fb;
+}
+
+.team-container {
+    width: 75%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.team-card img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.member-icon {
+    width: 28px;
+    height: 28px;
+    background-color: #4b258c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 8px;
+    font-size: 7px;
+    font-weight: bold;
+}
+
+.team-card h3 {
+    color: #4b258c;
+    font-size: 8px;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    color: #777;
+    font-size: 6px;
+}
+
+.contact {
+    background-color: white;
+}
+
+.contact-container {
+    width: 42%;
+    min-width: 220px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 7px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    padding: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4b258c;
+}
+
+.contact-form textarea {
+    height: 58px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: fit-content;
+    background-color: #4b258c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 13px;
+    font-size: 7px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #35176d;
+}
+
+.success-message {
+    color: #39a86b;
+    font-size: 6px;
+    margin-top: -5px;
+    margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .team-members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-container {
+        width: 70%;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    nav {
+        gap: 7px;
+    }
+
+    nav a {
+        font-size: 6px;
+    }
+
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+}
