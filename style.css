@@ -1,5 +1,34 @@
 /* MEMBER 2: global styles, layout, colours, dark mode */
 
+/* 1. Root variables for Light Mode */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #292b3d;
+    --primary-color: #4b258c;
+    --primary-hover: #35176d;
+    --card-bg: #ffffff;
+    --card-border: #eeeeee;
+    --section-alt: #f3f0fb;
+    --muted-text: #777777;
+    --input-border: #dddddd;
+    --shadow-color: rgba(0, 0, 0, 0.03);
+}
+
+/* 2. Dark Mode theme variables */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #9d71ea;
+    --primary-hover: #8352db;
+    --card-bg: #1e1e1e;
+    --card-border: #2d2d2d;
+    --section-alt: #181818;
+    --muted-text: #aaaaaa;
+    --input-border: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Universal selector (syntax error fixed: was '-') */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,8 +37,9 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    color: #292b3d;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -28,7 +58,6 @@ html {
         #f3effc,
         #ffffff
     );
-
     min-height: 160px;
     display: flex;
     flex-direction: column;
@@ -38,6 +67,10 @@ html {
     padding: 30px 20px;
 }
 
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #1f1b29, #121212);
+}
+
 .hero h1 {
     font-size: 27px;
     font-weight: 700;
@@ -45,13 +78,13 @@ html {
 }
 
 .hero p {
-    color: #777;
+    color: var(--muted-text);
     font-size: 9px;
     margin-bottom: 16px;
 }
 
 .hero button {
-    background-color: #4b258c;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -61,7 +94,7 @@ html {
 }
 
 .hero button:hover {
-    background-color: #35176d;
+    background-color: var(--primary-hover);
 }
 
 section {
@@ -70,14 +103,13 @@ section {
 
 section h2 {
     text-align: center;
-    color: #4b258c;
+    color: var(--primary-color);
     font-size: 16px;
     margin-bottom: 20px;
 }
 
-
 .about {
-    background-color: white;
+    background-color: var(--bg-color);
 }
 
 .about-container {
@@ -93,28 +125,28 @@ section h2 {
 }
 
 .about-card {
-    border: 1px solid #eeeeee;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     padding: 17px 10px;
     text-align: center;
-    background-color: white;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    background-color: var(--card-bg);
+    box-shadow: 0 1px 4px var(--shadow-color);
 }
 
 .about-card h3 {
-    color: #4b258c;
+    color: var(--primary-color);
     font-size: 9px;
     margin-bottom: 8px;
 }
 
 .about-card p {
-    color: #777;
+    color: var(--muted-text);
     font-size: 7px;
     line-height: 1.5;
 }
 
 .team {
-    background-color: #f3f0fb;
+    background-color: var(--section-alt);
 }
 
 .team-container {
@@ -130,11 +162,12 @@ section h2 {
 }
 
 .team-card {
-    background-color: white;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     padding: 12px 8px;
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 3px var(--shadow-color);
 }
 
 .team-card img {
@@ -148,7 +181,7 @@ section h2 {
 .member-icon {
     width: 28px;
     height: 28px;
-    background-color: #4b258c;
+    background-color: var(--primary-color);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -160,18 +193,18 @@ section h2 {
 }
 
 .team-card h3 {
-    color: #4b258c;
+    color: var(--primary-color);
     font-size: 8px;
     margin-bottom: 5px;
 }
 
 .team-card p {
-    color: #777;
+    color: var(--muted-text);
     font-size: 6px;
 }
 
 .contact {
-    background-color: white;
+    background-color: var(--bg-color);
 }
 
 .contact-container {
@@ -190,24 +223,26 @@ section h2 {
     font-size: 7px;
     font-weight: bold;
     margin-bottom: 4px;
-    color: #333;
+    color: var(--text-color);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    border: 1px solid #dddddd;
+    border: 1px solid var(--input-border);
     border-radius: 3px;
     padding: 7px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 7px;
     margin-bottom: 10px;
     outline: none;
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #4b258c;
+    border-color: var(--primary-color);
 }
 
 .contact-form textarea {
@@ -217,7 +252,7 @@ section h2 {
 
 .contact-form button {
     width: fit-content;
-    background-color: #4b258c;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -227,7 +262,7 @@ section h2 {
 }
 
 .contact-form button:hover {
-    background-color: #35176d;
+    background-color: var(--primary-hover);
 }
 
 .success-message {
@@ -236,8 +271,8 @@ section h2 {
     margin-top: -5px;
     margin-bottom: 8px;
 }
-@media (max-width: 700px) {
 
+@media (max-width: 700px) {
     header {
         padding: 0 5%;
     }
@@ -259,9 +294,7 @@ section h2 {
     }
 }
 
-
 @media (max-width: 450px) {
-
     nav {
         gap: 7px;
     }
